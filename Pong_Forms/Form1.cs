@@ -90,7 +90,7 @@ namespace Pong_Forms
             if (top == false)
             {
                 Ball.Top += speed;
-                if(Ball.Top > 800)
+                if (Ball.Top > 800)
                 {
                     top = true;
                 }
@@ -99,7 +99,7 @@ namespace Pong_Forms
             if (top == true)
             {
                 Ball.Top -= speed;
-                if(Ball.Top < 5)
+                if (Ball.Top < 5)
                 {
                     top = false;
                 }
@@ -109,7 +109,7 @@ namespace Pong_Forms
             {
                 Ball.Left += speed;
 
-                if (Ball.Left == Player2Picture.Left & (Ball.Top >= Player2Picture.Top & Ball.Top <= Player2Picture.Top+70))
+                if (Ball.Left == (Player2Picture.Left - Player2Picture.Width) & (Ball.Top >= Player2Picture.Top & Ball.Top <= Player2Picture.Top + Player2Picture.Height))
                 {
                     left = true;
                 }
@@ -120,7 +120,7 @@ namespace Pong_Forms
             {
                 Ball.Left -= speed;
 
-                if (Ball.Left == Player1Picture.Left & (Ball.Top >= Player1Picture.Top & Ball.Top <= Player1Picture.Top + 70))
+                if (Ball.Left == (Player1Picture.Left + Player1Picture.Width) + Player1Picture.Width & (Ball.Top >= Player1Picture.Top & Ball.Top <= Player1Picture.Top + Player1Picture.Height))
                 {
                     left = false;
                 }
