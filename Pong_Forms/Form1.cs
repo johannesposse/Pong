@@ -12,12 +12,16 @@ namespace Pong_Forms
 {
     public partial class Form1 : Form
     {
+        private int playerOneScore;
+        private int playerTwoScore;
         private bool left = false;
         private bool top = false;
         private int speed = 5;
         public Form1()
         {
             InitializeComponent();
+            PlayerOneScoreLabel.Text = "Player 1: 0";
+            PlayerTwoScoreLabel.Text = "Player 2: 0";
             Ball.Left = 20;
         }
 
@@ -80,12 +84,6 @@ namespace Pong_Forms
                 Player2Picture.Top += -10;
         }
 
-
-        private void Player2Picture_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BallTimer_Tick(object sender, EventArgs e)
         {
 
@@ -128,24 +126,27 @@ namespace Pong_Forms
                 }
             }
 
-            if(Ball.Left > Player2Picture.Left ^ Ball.Left < Player1Picture.Left)
+            if (Ball.Left > Player2Picture.Left) //om spelare två förlorar
             {
                 BallTimer.Stop();
                 label1.ForeColor = Color.Red; 
-                label1.Text = "Game Over";
+                label1.Text = "Player 2, you suck...";
                 Ball.Left = 750;
+                playerOneScore++;
+                PlayerOneScoreLabel.Text = "Player 1: " + playerOneScore.ToString();
             }
-           
+
+            if (Ball.Left < Player1Picture.Left) //om spelare ett förlorar
+            {
+                BallTimer.Stop();
+                label1.ForeColor = Color.Red;
+                label1.Text = "Player 1, try to hit the ball...";
+                Ball.Left = 750;
+                playerTwoScore++;
+                PlayerTwoScoreLabel.Text = "Player 2: " + playerTwoScore.ToString();
+            }
+
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

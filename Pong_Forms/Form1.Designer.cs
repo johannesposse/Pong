@@ -41,6 +41,8 @@ namespace Pong_Forms
             this.BallTimer = new System.Windows.Forms.Timer(this.components);
             this.BallTimerLeft = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.PlayerOneScoreLabel = new System.Windows.Forms.Label();
+            this.PlayerTwoScoreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Player1Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player2Picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Devider)).BeginInit();
@@ -74,7 +76,6 @@ namespace Pong_Forms
             this.Player2Picture.Size = new System.Drawing.Size(5, 70);
             this.Player2Picture.TabIndex = 1;
             this.Player2Picture.TabStop = false;
-            this.Player2Picture.Click += new System.EventHandler(this.Player2Picture_Click);
             // 
             // Player2TimerDown
             // 
@@ -91,7 +92,7 @@ namespace Pong_Forms
             this.Devider.BackColor = System.Drawing.Color.Lime;
             this.Devider.Location = new System.Drawing.Point(750, 0);
             this.Devider.Name = "Devider";
-            this.Devider.Size = new System.Drawing.Size(5, 810);
+            this.Devider.Size = new System.Drawing.Size(10, 810);
             this.Devider.TabIndex = 2;
             this.Devider.TabStop = false;
             // 
@@ -109,19 +110,36 @@ namespace Pong_Forms
             this.BallTimer.Interval = 10;
             this.BallTimer.Tick += new System.EventHandler(this.BallTimer_Tick);
             // 
-            // BallTimerLeft
-            // 
-            this.BallTimerLeft.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(690, 349);
+            this.label1.Location = new System.Drawing.Point(618, 349);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 46);
             this.label1.TabIndex = 5;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // PlayerOneScoreLabel
+            // 
+            this.PlayerOneScoreLabel.AutoSize = true;
+            this.PlayerOneScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerOneScoreLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PlayerOneScoreLabel.Location = new System.Drawing.Point(12, 9);
+            this.PlayerOneScoreLabel.Name = "PlayerOneScoreLabel";
+            this.PlayerOneScoreLabel.Size = new System.Drawing.Size(70, 26);
+            this.PlayerOneScoreLabel.TabIndex = 6;
+            this.PlayerOneScoreLabel.Text = "label2";
+            // 
+            // PlayerTwoScoreLabel
+            // 
+            this.PlayerTwoScoreLabel.AutoSize = true;
+            this.PlayerTwoScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerTwoScoreLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PlayerTwoScoreLabel.Location = new System.Drawing.Point(1351, 9);
+            this.PlayerTwoScoreLabel.Name = "PlayerTwoScoreLabel";
+            this.PlayerTwoScoreLabel.Size = new System.Drawing.Size(70, 26);
+            this.PlayerTwoScoreLabel.TabIndex = 7;
+            this.PlayerTwoScoreLabel.Text = "label2";
             // 
             // Form1
             // 
@@ -129,6 +147,8 @@ namespace Pong_Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1484, 811);
+            this.Controls.Add(this.PlayerTwoScoreLabel);
+            this.Controls.Add(this.PlayerOneScoreLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Ball);
             this.Controls.Add(this.Devider);
@@ -160,6 +180,8 @@ namespace Pong_Forms
         private System.Windows.Forms.Timer BallTimer;
         private System.Windows.Forms.Timer BallTimerLeft;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label PlayerOneScoreLabel;
+        private System.Windows.Forms.Label PlayerTwoScoreLabel;
     }
 }
 
